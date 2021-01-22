@@ -1,0 +1,282 @@
+
+
+/* 
+comment definir parametres genre padding value?
+@body-padding-value: 3rem;
+
+pour utiliser dans le footer, pour le coller aux bords
+*/
+
+body
+{
+    font-family: 'Raleway', sans-serif;
+    padding-top: 0px;
+
+/*    padding-left: @body-padding-value; */
+
+    padding-left: 3rem;
+    padding-right: 3rem;
+    margin-top: 0px;
+}
+
+#logo
+{
+    width: 150px;
+}
+
+#main-menu
+{   
+    margin-top: 0px;
+    float: right;
+    display: flex;
+    justify-content: right;
+}
+
+.menu-item
+{
+    margin-top: 0px;
+    padding-inline: 1rem;
+}
+
+
+.menu-rectangle
+{
+    display: none;
+    height: 4px;
+    width: 90%;
+    background-color: #0065FC;
+
+
+    margin-top: -36px;
+/* alignement margin top ZERO comment faire ???
+    comment placer rectangle on hover avant le <a href?
+    et faire display: block on a.hover? */
+
+    margin-bottom: 24px;
+}
+
+
+a.menu-item
+{
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* QUESTION: c'est bien comme ça???
+Je veux que le rectangle soit ON on a:hover ET on a:active
+Comment condenser les 2 suivents dans 1 seul?
+---------------*/
+/* .menu-item:hover, a.menu-item:active + .menu-rectangle
+{
+    display: block;
+    color:  #0065FC;
+}
+*/
+
+a.menu-item:hover + .menu-rectangle
+{
+    display: block;
+    color:  #0065FC;
+}
+
+a.menu-item:active + .menu-rectangle
+{
+    display: block;
+    color:  #0065FC;
+}
+
+
+
+
+
+
+
+a.menu-item:hover 
+{
+    color:  #0065FC;
+
+}
+
+
+
+a.menu-item:active
+{
+    color:  #0065FC;
+}
+
+/* ---------------------------------------------------------*/
+/* --------------- HEADER --------------------------*/
+
+
+h1.page-title
+{
+    font-weight: 700;
+}
+
+h2.sub-title
+{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+h2.section-title
+{
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+/* -------------------------------------------------------*/
+/* --------- SECTION HEBERGEMENTS ---------------------*/
+
+#hebergements
+{
+    background-color: #F2F2F2 ;
+    padding: 2.4rem 2.8rem 2.4rem 2.8rem;
+    border-radius: 1rem;
+}
+
+#hotel-grid
+{
+     display:flex;
+     flex-wrap: wrap;
+     margin: -15px;
+}
+
+.hotel-item
+{
+    margin:15px;
+    width: 30%;
+    height: 170px;
+    min-width: 180px;
+    width: 180px;
+    background-color: #fff ;
+    padding: 0.3rem;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 5px 0px gray;  
+}
+
+.hotel-item:hover
+{
+    box-shadow: 0px 0px 15px 0px gray;
+}
+
+
+
+.hotel-crop-container
+{
+    height: 100px;
+ /*   vertical-align: middle; */
+    overflow: hidden; 
+ /*   background-position: center center; */
+    border-radius: 0.8em 0.8em 0em 0em;
+
+}
+
+img.small-hotel
+{
+    width:100%;
+    margin: -10px 0px -10px 0px; 
+ /*  height: 80px;  */
+/*    overflow: hidden; */
+/*    vertical-align: middle; */
+/*    border-radius: 0.8em 0.8em 0em 0em; */
+/*    clip: rect(10px, 40px, 40px, 10px) */
+/*    object-fit: */
+
+}
+
+
+h3.hotel-name
+{
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin: 8px 8px 4px 8px;
+}
+
+p.hotel-prix
+{
+    font-size: 0.7rem;
+    margin:4px 8px 6px 8px;
+}
+
+
+.stars-container
+{
+    margin-top: -2px;
+    padding-left: 8px;
+}
+
+
+.fa-star {
+    color: blue;
+  }
+
+  .fa-star-o {
+    color: blue;
+  }
+
+p.show-more
+{
+    margin-top: 2rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+
+
+#activites
+{
+    margin: 60px 0px 0px 0px;    
+    min-height: 200px;
+}
+
+
+/* -------------------------------------------------*/
+/* ----------- FOOTER --------------------*/
+
+#footer
+{   
+/*    left: 0;
+    bottom: 0;
+    right: 0;
+
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 40px 60px 40px;
+    margin: 0px 0px 0px 0px;
+*/    background-color: #F2F2F2 ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem;
+    padding-top: 1.6rem;
+    padding-bottom: 3rem;
+
+/* ?????? comment aligner à widescreen, overcoming body padding??? 
+    keeping same body padding?? */   
+ /*   margin-left: -3rem;
+    margin-right: -3rem;
+*/
+}
+
+.footer-column
+{
+    flex: 1;
+    padding-right: 2rem;
+}
+
+h3.footer-title
+{
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+a.footer-link
+{
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: normal;
+    line-height: 26px;
+}
+}
+
