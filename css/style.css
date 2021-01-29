@@ -1,111 +1,76 @@
-
-
-/* 
-comment definir parametres genre padding value?
-@body-padding-value: 3rem;
-
-pour utiliser dans le footer, pour le coller aux bords
-*/
-
 body
 {
     font-family: 'Raleway', sans-serif;
     padding-top: 0px;
-
-/*    padding-left: @body-padding-value; */
-
-    padding-left: 3rem;
-    padding-right: 3rem;
-    margin-top: 0px;
+    margin: 0px;
 }
+
+header, footer, #filtres, #hotels-section, #activites
+{
+    margin-top: 0px;
+    margin-left: 8%;
+    margin-right: 8%;
+    padding-top: 0;
+    padding-bottom: 1rem;
+}
+
+footer
+{
+/*  it's visually nicer to have footer padding equal to margin of other sections */
+    padding: 8%;
+}
+
 
 #logo
 {
     width: 150px;
+    margin-top: 30px;
 }
 
-#main-menu
-{   
-    margin-top: 0px;
+
+nav 
+{
     float: right;
     display: flex;
-    justify-content: right;
+    align-items: flex-start;
+    padding:0;
+    margin: 24px;
 }
 
-.menu-item
+nav ul
 {
-    margin-top: 0px;
-    padding-inline: 1rem;
+    list-style-type: none;
 }
 
-
-.menu-rectangle
+nav li 
 {
-    display: none;
-    height: 4px;
-    width: 90%;
-    background-color: #0065FC;
-
-
-    margin-top: -36px;
-/* alignement margin top ZERO comment faire ???
-    comment placer rectangle on hover avant le <a href?
-    et faire display: block on a.hover? */
-
-    margin-bottom: 24px;
+    float: left;
 }
-
-
-a.menu-item
+    
+ul li a 
 {
+    color:black;
     text-decoration: none;
+    text-align: center;
     font-weight: 500;
-}
-
-/* QUESTION: c'est bien comme ça???
-Je veux que le rectangle soit ON on a:hover ET on a:active
-Comment condenser les 2 suivents dans 1 seul?
----------------*/
-/* .menu-item:hover, a.menu-item:active + .menu-rectangle
-{
-    display: block;
-    color:  #0065FC;
-}
-*/
-
-a.menu-item:hover + .menu-rectangle
-{
-    display: block;
-    color:  #0065FC;
-}
-
-a.menu-item:active + .menu-rectangle
-{
-    display: block;
-    color:  #0065FC;
+    padding: 38px 20px 10px 20px;
+    border-top: 4px solid transparent;
 }
 
 
-
-
-
-
-
-a.menu-item:hover 
-{
-    color:  #0065FC;
-
-}
-
-
-
-a.menu-item:active
+nav a:active
 {
     color:  #0065FC;
 }
 
-/* ---------------------------------------------------------*/
-/* --------------- HEADER --------------------------*/
+nav ul a:hover 
+
+{
+    border-top: 4px solid #0065FC;
+}
+
+
+/*  HEADER */
 
 
 h1.page-title
@@ -125,56 +90,147 @@ h2.section-title
     font-weight: 800;
 }
 
-/* -------------------------------------------------------*/
-/* --------- SECTION HEBERGEMENTS ---------------------*/
 
-#hebergements
+#location-icon
+{
+    width: 40px;
+    height: 30px;
+    background-color: #F2F2F2 ;
+}
+
+
+#input-city
+{
+    padding: 8px;    
+    margin-right: -4px;
+    border-color: lightgray;
+}
+
+#search-button
+{
+    color: white;
+    background-color: #0065FC;
+    padding:10px;
+    border-radius: 0 10px 10px 0;
+    border-width: 0;
+}
+
+
+
+
+
+/*  SECTION HEBERGEMENTS */
+
+
+#hotels-section{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+
+.hotels-box-container
 {
     background-color: #F2F2F2 ;
-    padding: 2.4rem 2.8rem 2.4rem 2.8rem;
-    border-radius: 1rem;
+    padding: 2.4rem 2.6rem 2.4rem 2.6rem;
+    border-radius: 1rem;    
 }
 
-#hotel-grid
+
+#hotels-main
 {
-     display:flex;
-     flex-wrap: wrap;
-     margin: -15px;
+
 }
 
-.hotel-item
+
+#hotels-populars
 {
-    margin:15px;
-    width: 30%;
+    margin-left: 3rem;
+}
+
+
+#hotel-grid-main
+{
+    margin: 0 -15px 0 -15px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-flow: row wrap ;
+
+    flex-wrap: wrap;
+}
+
+
+.hotel-item-common
+{
+/*    margin-right: 35px; */
+    margin: 15px;
+    margin-bottom: 25px;
     height: 170px;
-    min-width: 180px;
     width: 180px;
+    background-color: #fff ;
+    padding: 0.3rem;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 5px 0px gray;  
+
+}
+
+.hotel-item-main
+{
+    height: 180px;
+    width: 220px;
     background-color: #fff ;
     padding: 0.3rem;
     border-radius: 1rem;
     box-shadow: 0px 0px 5px 0px gray;  
 }
 
-.hotel-item:hover
+.hotel-item-common:hover
 {
     box-shadow: 0px 0px 15px 0px gray;
 }
 
-
-
-.hotel-crop-container
+.hotel-item-pop
 {
-    height: 100px;
+    margin: 30px 0px 40px 0px;
+    
+    height: 120px;
+    width: 280px;
+    padding: 0.3rem;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 5px 0px gray;  
+}
+
+
+
+
+.hotel-height-crop-container
+{
+    height: 110px;
  /*   vertical-align: middle; */
     overflow: hidden; 
  /*   background-position: center center; */
     border-radius: 0.8em 0.8em 0em 0em;
-
 }
 
-img.small-hotel
+
+
+.hotel-width-crop-container
 {
-    width:100%;
+    float: left; 
+    width: 100px;
+    height: 120px;
+    margin-right: 12px;
+ /*   vertical-align: middle; */
+    overflow: hidden; 
+ /*   background-position: center center; */
+    border-radius: 0.8em 0em 0em 0.8em;
+}
+
+
+img.small-hotel-main
+{
+    width: 100%; 
     margin: -10px 0px -10px 0px; 
  /*  height: 80px;  */
 /*    overflow: hidden; */
@@ -182,8 +238,23 @@ img.small-hotel
 /*    border-radius: 0.8em 0.8em 0em 0em; */
 /*    clip: rect(10px, 40px, 40px, 10px) */
 /*    object-fit: */
-
 }
+
+
+img.small-hotel-pop
+{
+    height: 100%;
+    margin: 0px -30px 0px -30px; 
+ /*  height: 80px;  */
+/*    overflow: hidden; */
+/*    vertical-align: middle; */
+/*    border-radius: 0.8em 0.8em 0em 0em; */
+/*    clip: rect(10px, 40px, 40px, 10px) */
+/*    object-fit: */
+}
+
+
+
 
 
 h3.hotel-name
@@ -208,11 +279,11 @@ p.hotel-prix
 
 
 .fa-star {
-    color: blue;
+    color: #0065FC;
   }
 
-  .fa-star-o {
-    color: blue;
+ .fa-star-o {
+    color:#0065FC;
   }
 
 p.show-more
@@ -226,57 +297,46 @@ p.show-more
 
 #activites
 {
-    margin: 60px 0px 0px 0px;    
+    margin-top: 60px;
+    margin-right: 60px;    
     min-height: 200px;
 }
 
 
-/* -------------------------------------------------*/
-/* ----------- FOOTER --------------------*/
+/*  FOOTER */
 
-#footer
+footer
 {   
-/*    left: 0;
-    bottom: 0;
-    right: 0;
-
-    width: 100%;
-    overflow: hidden;
-    padding: 20px 40px 60px 40px;
-    margin: 0px 0px 0px 0px;
-*/    background-color: #F2F2F2 ;
+    background-color: #F2F2F2 ;
     display: flex;
+    flex-wrap: nowrap;
     justify-content: space-between;
-    align-items: center;
-    padding: 0rem;
+    align-items: flex-start;
     padding-top: 1.6rem;
     padding-bottom: 3rem;
-
-/* ?????? comment aligner à widescreen, overcoming body padding??? 
-    keeping same body padding?? */   
- /*   margin-left: -3rem;
-    margin-right: -3rem;
-*/
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 .footer-column
 {
     flex: 1;
-    padding-right: 2rem;
+    min-width: 230px;
 }
 
-h3.footer-title
+footer h3
 {
     font-size: 1rem;
     font-weight: bold;
 }
 
-a.footer-link
+footer a
 {
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: normal;
     line-height: 26px;
+    color: black;
 }
-}
+
 
