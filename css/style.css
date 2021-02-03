@@ -14,6 +14,13 @@ header, footer, #filtres, #hotels-section, #activites
     padding-bottom: 1rem;
 }
 
+a
+{
+    text-decoration: none;
+}
+
+
+
 footer
 {
 /*  it's visually nicer to have footer padding equal to margin of other sections */
@@ -26,6 +33,7 @@ footer
     width: 150px;
     margin-top: 30px;
 }
+
 
 
 nav 
@@ -47,26 +55,27 @@ nav li
     float: left;
 }
     
-ul li a 
+nav ul li a 
 {
     color:black;
-    text-decoration: none;
     text-align: center;
     font-weight: 500;
-    padding: 38px 20px 10px 20px;
+    padding: 0 20px 10px 20px;
     border-top: 4px solid transparent;
 }
 
 
-nav a:active
+nav a:active, a.blue-link
 {
     color:  #0065FC;
 }
+
 
 nav ul a:hover 
 
 {
     border-top: 4px solid #0065FC;
+    color: #0065FC;
 }
 
 
@@ -99,20 +108,101 @@ h2.section-title
 }
 
 
+#search-bar
+{
+    display: flex;
+}
+
+
+#location-box
+{
+    background-color: #F2F2F2;
+    width: 12px;
+    height: 16px;
+    padding: 10px 10px 10px 16px;
+    border-radius: 8px 0 0 8px;
+}
+
+
+#location-icon
+{
+    margin-left: 20px;
+}
+
+
 #input-city
 {
     padding: 8px;    
     margin-right: -4px;
-    border-color: lightgray;
+    font-size: 1rem;
+    font-weight: 700;
+    border-color: rgb(238, 238, 238);
+    border-style: solid;
+
 }
+
 
 #search-button
 {
     color: white;
     background-color: #0065FC;
+    font-size: 0.9rem;
+    font-weight: 500;
     padding:10px;
     border-radius: 0 10px 10px 0;
     border-width: 0;
+}
+
+
+
+#filtre-bar
+{
+    margin: 30px 0 30px 0;
+/*   height: 200px; */
+    display: flex;
+}
+
+
+#filtre-bar ul
+{
+    list-style-type: none;
+    display: flex;
+}
+
+
+#filtre-bar ul li a
+{
+    text-align: center;
+    padding: 10px 20px 10px 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+
+/* .filtre-bar ul li */
+.filtre-item
+{
+    display: flex; 
+    height: 38px;
+    margin: 0 30px 0 0;
+    border-radius: 50px;
+    border-style: solid;
+ /*   border-width: 2px; */
+    border-color: rgb(221, 221, 221);
+}
+
+
+.filtre-icon-box
+{   
+    padding: 8px 10px 8px 10px;
+    background-color: #DEEBFF ;
+    border-radius: 50px;
+}
+
+
+.filtre-icon
+{
+    padding: 5px;
 }
 
 
@@ -122,30 +212,33 @@ h2.section-title
 /*  SECTION HEBERGEMENTS */
 
 
-#hotels-section{
+#hotels-section
+{
     display: flex;
     align-items: flex-start;
-    justify-content: space-around;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 
 .hotels-box-container
 {
     background-color: #F2F2F2 ;
-    padding: 2.4rem 2.6rem 2.4rem 2.6rem;
-    border-radius: 1rem;    
+    padding: 2.4rem 2.4rem 2rem 2.4rem;
+    border-radius: 1rem;
 }
 
 
 #hotels-main
 {
-
+    max-width: 760px;
 }
 
 
 #hotels-populars
 {
     margin-left: 3rem;
+    width: 280px;
 }
 
 
@@ -156,7 +249,6 @@ h2.section-title
     align-items: flex-start;
     justify-content: space-around;
     flex-flow: row wrap ;
-
     flex-wrap: wrap;
 }
 
@@ -166,7 +258,7 @@ h2.section-title
 /*    margin-right: 35px; */
     margin: 15px;
     margin-bottom: 25px;
-    height: 170px;
+    height: 180px;
     width: 180px;
     background-color: #fff ;
     padding: 0.3rem;
@@ -178,7 +270,7 @@ h2.section-title
 .hotel-item-main
 {
     height: 180px;
-    width: 220px;
+    width: 210px;
     background-color: #fff ;
     padding: 0.3rem;
     border-radius: 1rem;
@@ -195,7 +287,7 @@ h2.section-title
     margin: 30px 0px 40px 0px;
     
     height: 120px;
-    width: 280px;
+    width: 270px;
     padding: 0.3rem;
     border-radius: 1rem;
     box-shadow: 0px 0px 5px 0px gray;  
@@ -219,7 +311,8 @@ h2.section-title
 {
     float: left; 
     width: 100px;
-    height: 120px;
+    height: 100%;
+ /*   height: 110px; */
     margin-right: 12px;
  /*   vertical-align: middle; */
     overflow: hidden; 
@@ -288,7 +381,6 @@ p.hotel-prix
 
 p.show-more
 {
-    margin-top: 2rem;
     font-weight: 600;
     font-size: 1.2rem;
 }
@@ -297,9 +389,40 @@ p.show-more
 
 #activites
 {
-    margin-top: 60px;
-    margin-right: 60px;    
+    margin-top: 50px;
+    margin-bottom: 50px;
     min-height: 200px;
+}
+
+.activity-picture
+{
+    margin: 0 0 0 0;
+    overflow: hidden;
+    width: 260px;
+    border-radius: 20px;
+    padding: 3px;
+    box-shadow: 0px 0px 2px 0px gray; 
+}
+
+.activity-picture:hover
+{
+    box-shadow: 0px 0px 10px 0px gray; 
+}
+
+
+.activity-picture img
+{
+    margin: 0 -40px 0 -40px;
+    border-radius: 20px 20px 0 0;
+    height: 100%;
+}
+
+.activity-picture figcaption
+{
+    padding: 8px 10px 8px 12px;
+    font-weight: 600;
+    font-size: 0.9rem;
+
 }
 
 

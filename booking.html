@@ -23,7 +23,7 @@
                     <a href="#">Activités</a>
                 </li>
                 <li>
-                    <a href="#">S'inscrire</a>
+                    <a class="blue-link" href="#">S'inscrire</a>
                 </li>
             </ul>
         </nav>
@@ -41,17 +41,67 @@
     </header>
 
     <section id="filtres">
-        <i class="fas fa-map-marker-alt"></i>
-        <form id="form">
-            <i class="fas fa-map-marker-alt"></i> 
-            <input type="text" id="input-city" name="pseudo" value="Marseille, France"/>
-            <input id="search-button" type="submit" value="Rechercher" />
-         </form>
-         
+        <div id="search-bar">
+            <div id="location-box">
+                <i class="location-icon fa fas fa-map-marker"></i>
+            </div>          
+            <form id="form">
+                <i class="fas fa-map-marker-alt"></i> 
+                <input type="search" id="input-city" name="pseudo" value="Marseille, France"/>
+                <input id="search-button" type="submit" value="Rechercher" />
+            </form>
+        </div>
+
+
+        <div id="filtre-bar">
+
+            <h3>Filtres</h3>     
+            <ul>
+                <li>
+                    <div class="filtre-item">
+                        <div class="filtre-icon-box">
+                            <i class="filtre-icon fa fas fa-map-marker"></i>
+                        </div>
+                        <a href="">Êconomique</a>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="filtre-item">
+                        <div class="filtre-icon-box">
+                            <i class="filtre-icon fa fas fa-map-marker"></i>
+                        </div>
+                        <a href="">Familial</a>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="filtre-item">
+                        <div class="filtre-icon-box">
+                            <i class="filtre-icon fa fas fa-map-marker"></i>
+                        </div>
+                        <a href="">Romantique</a>
+                    </div>
+                </li>
+
+                <li>
+                    <div class="filtre-item">
+                        <div class="filtre-icon-box">
+                            <i class="filtre-icon fa fas fa-map-marker"></i>
+                        </div>
+                        <a href="">Animaux autorisés</a>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+
+
        
         
 
-        <h3>Filtres</h3>
+
 
     </section>
 
@@ -236,6 +286,13 @@
 
     <section id="activites">
         <h2 class="section-title">Activités</h2>
+        <div id="activites-photo-container">
+            <figure class="activity-picture">
+                <img src="images/activites/4_small/florian-wehde-xW9e8gdotxI-unsplash.jpg" alt="Vieux Port Marseille">
+                <figcaption>Vieux Port</figcaption>
+            </figure>
+ 
+        </div>
            
     </section>
 
