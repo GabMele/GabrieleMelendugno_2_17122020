@@ -42,12 +42,14 @@ nav
     display: flex;
     align-items: flex-start;
     padding:0;
-    margin: 24px;
+    margin: 0px;
 }
 
 nav ul
 {
     list-style-type: none;
+    margin: 0px;
+    padding: 20px;
 }
 
 nav li 
@@ -60,7 +62,7 @@ nav ul li a
     color:black;
     text-align: center;
     font-weight: 500;
-    padding: 0 20px 10px 20px;
+    padding: 16px 20px 10px 20px;
     border-top: 4px solid transparent;
 }
 
@@ -85,6 +87,7 @@ nav ul a:hover
 h1.page-title
 {
     font-weight: 700;
+    font-size: 1.8rem;
 }
 
 h2.sub-title
@@ -111,6 +114,12 @@ h2.section-title
 #search-bar
 {
     display: flex;
+}
+
+#search-button:hover
+{
+    box-shadow: 3px 3px 6px 0px lightgrey; 
+    cursor: pointer;
 }
 
 
@@ -157,9 +166,10 @@ h2.section-title
 
 #filtre-bar
 {
-    margin: 30px 0 30px 0;
+    margin: 30px 0 0px 0;
 /*   height: 200px; */
     display: flex;
+
 }
 
 
@@ -167,6 +177,7 @@ h2.section-title
 {
     list-style-type: none;
     display: flex;
+    flex-wrap: wrap;
 }
 
 
@@ -176,7 +187,14 @@ h2.section-title
     padding: 10px 20px 10px 20px;
     font-size: 0.9rem;
     font-weight: 700;
+    color:black;
 }
+
+.filtre-item:hover
+{
+    box-shadow: 0px 0px 10px 0px lightgray;  
+}
+
 
 
 /* .filtre-bar ul li */
@@ -184,7 +202,7 @@ h2.section-title
 {
     display: flex; 
     height: 38px;
-    margin: 0 30px 0 0;
+    margin: 0 30px 20px 0;
     border-radius: 50px;
     border-style: solid;
  /*   border-width: 2px; */
@@ -194,6 +212,7 @@ h2.section-title
 
 .filtre-icon-box
 {   
+    color:#0065FC;
     padding: 8px 10px 8px 10px;
     background-color: #DEEBFF ;
     border-radius: 50px;
@@ -202,9 +221,8 @@ h2.section-title
 
 .filtre-icon
 {
-    padding: 5px;
+    padding: 3px;
 }
-
 
 
 
@@ -226,19 +244,21 @@ h2.section-title
     background-color: #F2F2F2 ;
     padding: 2.4rem 2.4rem 2rem 2.4rem;
     border-radius: 1rem;
+    padding-right: 5%;
+    margin-bottom: 50px;
 }
 
 
 #hotels-main
 {
-    max-width: 760px;
+    max-width: 720px;
 }
 
 
 #hotels-populars
 {
-    margin-left: 3rem;
-    width: 280px;
+    width: 290px;
+    padding-bottom: 10px;
 }
 
 
@@ -258,65 +278,50 @@ h2.section-title
 /*    margin-right: 35px; */
     margin: 15px;
     margin-bottom: 25px;
-    height: 180px;
-    width: 180px;
     background-color: #fff ;
     padding: 0.3rem;
     border-radius: 1rem;
     box-shadow: 0px 0px 5px 0px gray;  
-
 }
+
 
 .hotel-item-main
 {
     height: 180px;
     width: 210px;
-    background-color: #fff ;
-    padding: 0.3rem;
-    border-radius: 1rem;
-    box-shadow: 0px 0px 5px 0px gray;  
 }
+
 
 .hotel-item-common:hover
 {
     box-shadow: 0px 0px 15px 0px gray;
 }
 
+
 .hotel-item-pop
 {
     margin: 30px 0px 40px 0px;
-    
     height: 120px;
-    width: 270px;
-    padding: 0.3rem;
-    border-radius: 1rem;
-    box-shadow: 0px 0px 5px 0px gray;  
+    width: 280px;
+    position: relative;
 }
-
-
 
 
 .hotel-height-crop-container
 {
     height: 110px;
- /*   vertical-align: middle; */
     overflow: hidden; 
- /*   background-position: center center; */
     border-radius: 0.8em 0.8em 0em 0em;
 }
-
 
 
 .hotel-width-crop-container
 {
     float: left; 
-    width: 100px;
+    width: 106px;
     height: 100%;
- /*   height: 110px; */
-    margin-right: 12px;
- /*   vertical-align: middle; */
+    margin-right: 10px;
     overflow: hidden; 
- /*   background-position: center center; */
     border-radius: 0.8em 0em 0em 0.8em;
 }
 
@@ -324,7 +329,9 @@ h2.section-title
 img.small-hotel-main
 {
     width: 100%; 
-    margin: -10px 0px -10px 0px; 
+    height: 100%;
+    object-fit: cover;
+ /*   margin: -10px 0px -10px 0px; */
  /*  height: 80px;  */
 /*    overflow: hidden; */
 /*    vertical-align: middle; */
@@ -337,7 +344,13 @@ img.small-hotel-main
 img.small-hotel-pop
 {
     height: 100%;
-    margin: 0px -30px 0px -30px; 
+    margin: 0; 
+    position: relative;
+
+    width: 100%; 
+    height: 100%;
+    object-fit: cover;
+
  /*  height: 80px;  */
 /*    overflow: hidden; */
 /*    vertical-align: middle; */
@@ -347,27 +360,45 @@ img.small-hotel-pop
 }
 
 
+.hotel-info
+{
+    margin: -8px 4px 4px 6px;
+}
 
 
 
 h3.hotel-name
 {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     font-weight: 700;
-    margin: 8px 8px 4px 8px;
+    color: black;
+/*    margin: 8px 8px 4px 8px; */
 }
+
 
 p.hotel-prix
 {
-    font-size: 0.7rem;
-    margin:4px 8px 6px 8px;
+    color: black;
+    font-size: 0.8rem;
+    line-height: 0px;
+    margin: -4px 0px 0px 0px;
 }
 
 
-.stars-container
+
+
+.stars-container-main
 {
+    margin-top: 12px;
+}
+
+.stars-container-pop
+{
+    position: absolute;
+    left: 120px;
+    top: 53px;
     margin-top: -2px;
-    padding-left: 8px;
+    padding-top: 48px;
 }
 
 
@@ -379,47 +410,81 @@ p.hotel-prix
     color:#0065FC;
   }
 
-p.show-more
+
+.show-more
 {
     font-weight: 600;
     font-size: 1.2rem;
+    line-height: 40px;
 }
 
 
 
 #activites
 {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    min-height: 200px;
+    margin-top: 0;
+    margin-bottom: 90px;
+/*    height: 500px;  */
+ /*   background-color: yellow;*/
 }
+
+
+#activities-photo-container
+{
+    margin: 40px -1em 40px -1em;
+    display: flex;
+    justify-content: space-between;
+    height: 500px;
+}
+
+
+.activity-photo-column
+{
+    min-width: 225px;
+    max-width: 280px;
+    flex: 1;
+    margin: 0 1em;
+}
+
+
+.activity-photo-half
+{
+    height: 42%;
+    padding-bottom: 80px;
+}
+
 
 .activity-picture
 {
     margin: 0 0 0 0;
     overflow: hidden;
-    width: 260px;
+    width: 100%;
+    height: 100%; 
+    padding-bottom: 40px;
+  /*  max-width: 80px;*/
+ /*   height: 100%; */
     border-radius: 20px;
-    padding: 3px;
-    box-shadow: 0px 0px 2px 0px gray; 
+    box-shadow: 0px 0px 15px 0px lightgray; 
 }
+
 
 .activity-picture:hover
 {
-    box-shadow: 0px 0px 10px 0px gray; 
+    box-shadow: 0px 0px 15px 0px gray; 
 }
 
 
 .activity-picture img
 {
-    margin: 0 -40px 0 -40px;
-    border-radius: 20px 20px 0 0;
     height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
 }
 
 .activity-picture figcaption
 {
-    padding: 8px 10px 8px 12px;
+    padding: 8px 10px 14px 16px;
     font-weight: 600;
     font-size: 0.9rem;
 
@@ -440,6 +505,7 @@ footer
     margin-left: 0px;
     margin-right: 0px;
 }
+
 
 .footer-column
 {
