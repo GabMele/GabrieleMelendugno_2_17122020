@@ -3,9 +3,10 @@
     --custom-light-blue: #DEEBFF;
     --background-gray: #F2F2F2;
     --section-side-padding: 8%;
-    --screen-width-smartphone-portrait: 420px;
+/*    --screen-width-smartphone-portrait: 420px;
     --screen-width-smartphone-landscape: 768px;   
     --screen-width-tablet: 1024px;
+*/
 }
 
 body {
@@ -14,13 +15,18 @@ body {
     margin: 0px;
 }
 
-header, #page-title-section, footer, #filtres, #hotels-section, #activites {
+header, #page-title-div, footer, #filtres, #hotels-section, #activites {
     margin-top: 0px;
     margin-left: var(--section-side-padding);
     margin-right: var(--section-side-padding);
     padding-top: 0;
     padding-bottom: 1rem;
     max-width: 1400px;
+}
+
+@media all and (max-width: 420px) {
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 a {
@@ -43,24 +49,6 @@ footer {
 }
 
 nav {
-/*    display: flex;
-    align-items: flex-end;
-    padding:0;
-    margin: 0px;
-}
-
-nav ul {
-    list-style-type: none;
-    margin: 0px;
-    margin-left: -40px;
-    padding-top: 20px;
-}
-
-nav li {
-/*   float: left; */
-}
-
-#nav-menu {
     padding-top: 30px;
     display: flex;
     justify-content: flex-end;
@@ -70,12 +58,14 @@ nav li {
     display: flex;
 }
 
-    
+#signup-link {
+    padding: 0 20px;
+}
+
 nav .nav-links-item a {
     color:black;
-    text-align: center;
     font-weight: 500;
-    padding: 26px 20px 10px 20px;
+    padding: 16px 20px 10px 20px;
     border-top: 4px solid transparent;
 }
 
@@ -86,14 +76,10 @@ nav .nav-links-item a:hover {
 
 nav .subscription-link a {
     padding-left: 20px;
-    color: var(--custom-blue);
 }
 
-nav a.custom-blue {
+nav a.custom-blue-bold {
     color: var(--custom-blue);
-}
-
-nav .bold {
     font-weight: 700;
 }
 
@@ -101,23 +87,15 @@ nav .nav-menu a:active {
     color: var(--custom-blue);
 }
 
-
-
 @media all and (max-width: 420px) {
     header {
         margin: 0;
     }
 
     nav {
-        padding-bottom: 18px;
         width: 100%;
         margin: 0;
-    }
-
-    #nav-menu {
         flex-direction: column-reverse;
-        width: 100%;
-        margin: 0;
     }
 
     #nav-links {
@@ -125,7 +103,7 @@ nav .nav-menu a:active {
         justify-content: space-evenly;
     }
 
-    #subscription-link {
+    #signup-link {
         display: flex;
         justify-content: flex-end;
         border: 0;
@@ -134,12 +112,13 @@ nav .nav-menu a:active {
 
     nav .nav-links-item {
         margin: 0;
-        padding: 10px 0 10px 0;
+        width: 50%;
+        text-align: center;
     }
 
     nav .nav-links-item a {
         border-top: 0;
-        padding: 10px 50px 10px 48px;
+        display: inherit;
         border-bottom: 3px solid var(--background-gray);
     }
 
@@ -237,7 +216,6 @@ h2.section-title {
     border-width: 0;
 }
 
-
 #search-button-icon {
     display: none;
     color: white;
@@ -247,7 +225,6 @@ h2.section-title {
     border-width: 0;
 }
 
-
 @media all and (max-width: 420px) {
     #search-button-text {
         display: none ;
@@ -256,40 +233,51 @@ h2.section-title {
     #search-button-icon {
         display: block;
     }
-
 }
 
 #filtres-div {
-    margin: 10px 0 0 0;
+    margin: 20px 0 0 0;
     display: flex;
 }
 
-@media all and (max-width: 768px) {
-    #filtres-div {
-        display: flex;
-        flex-direction: column;
-    }
-}
-
-
 #filtres-div-title {
-    margin-bottom: -20px;
     padding-right: 30px;
 }
 
 #filtre-bar {
-    margin-left: -42px;
+    margin-left: 0;
     display: flex;
+    padding: 8px 0;
 }
 
-#filtre-bar ul {
-    list-style-type: none;
+#filtre-nowrap {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+#filtre-wrap {
     display: flex;
     flex-wrap: wrap;
 }
 
-#filtre-bar ul li a {
-    padding: 10px 20px 10px 20px;
+@media all and (max-width: 420px) {
+    #filtres-div {
+        flex-direction: column;
+    }
+
+    #filtre-bar {
+        flex-direction: column;
+    }
+}
+
+@media all and (min-width: 420px) and (max-width: 800px) {
+    #filtre-bar {
+        flex-direction: column;
+    }
+}
+
+#filtre-bar a {
+    padding: 10px 20px 10px 12px;
     font-size: 0.9rem;
     font-weight: 700;
     color:black;
@@ -302,7 +290,7 @@ h2.section-title {
 .filtre-item {
     display: flex; 
     height: 38px;
-    margin: 0 30px 20px 0;
+    margin: 0 30px 20px -10px;
     border-radius: 50px;
     border-style: solid;
     border-color: rgb(221, 221, 221);
@@ -340,6 +328,7 @@ h2.section-title {
 .info-text {
     padding-top: 6px;
     padding-left: 8px;
+    font-size: 0.9rem;
 }
 
 /*  SECTION HEBERGEMENTS */
@@ -351,10 +340,6 @@ h2.section-title {
     flex-wrap: wrap;
     min-height: 400px;
 }
-
-
-
-
 
 .hotels-box-container {
     background-color: var(--background-gray) ;
@@ -525,15 +510,8 @@ p.hotel-prix {
 
     #hotel-grid-main {
         margin: 0;
- /*       display: flex;
-        align-items: flex-start;
-        justify-content: space-around;
-        flex-flow: row wrap ;
-        flex-wrap: wrap; */
     }
 }
-
-
 
 #activites {
     margin-top: 0;
@@ -541,7 +519,7 @@ p.hotel-prix {
 }
 
 #activities-photo-container {
-    margin: 40px -1em 40px -1em;
+    margin: 40px -120px 40px -120px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -550,7 +528,8 @@ p.hotel-prix {
 .activities-half-container {
     margin: 0;
     display: flex;
-    height: 100%;
+    margin-bottom: -40px;
+/*    height: 100%; */
     justify-content: space-around;
     flex-flow: nowrap;
 }
@@ -561,8 +540,8 @@ p.hotel-prix {
     min-width: 225px;
     max-width: 280px;
  /*   flex: 1; */
-    margin: 0 1em;
- /*   max-height: 340px; */
+    padding: 20px;
+    max-height: 600px;
  /*   height: 320px; */
     display: flex;
     flex-direction: column;
@@ -618,7 +597,17 @@ p.hotel-prix {
         margin: 0 0 0 0;
         height: inherit;
         max-width: 400px;
+        padding: 0px;
      /*   max-height: 400px; */
+    }
+
+    .activities-half-container {
+        margin: 0;
+        display: flex;
+        height: 100%;
+        justify-content: space-around;
+        flex-flow: wrap;
+        flex-direction: column;
     }
 
     .activity-picture {
@@ -628,17 +617,23 @@ p.hotel-prix {
 
     .activity-photo-item {
         height: 140px;
-        padding-bottom: 50px;
+        padding-bottom: 30px;
     }
-
-
-
 }
 
+@media all and (min-width: 1200px) {
+    #activities-photo-container
+    {
+     /*   height: 400px; */
+    }
+}
 
-
-
-
+@media all and (max-width: 1200px) {
+    #activities-photo-container
+    {
+     /*   height: unset; */
+    }
+}
 
 /*  FOOTER */
 
