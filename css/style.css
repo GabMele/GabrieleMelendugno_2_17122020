@@ -541,7 +541,6 @@ p.hotel-prix {
     padding-bottom: 40px;
     border-radius: 20px;
     box-shadow: 0px 0px 15px 0px lightgray; 
-
 }
 
 .activity-picture:hover {
@@ -597,6 +596,18 @@ p.hotel-prix {
         padding-bottom: 30px;
     }
 }
+
+
+@media all and (max-width: 1200px) {
+    #activities-photo-container {
+        margin: 40px 0 40px 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+
 
 /* FOOTER */
 
